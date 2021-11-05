@@ -26,5 +26,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: mpf
-          publish_dir: ./packages/matketing/dist 
+          publish_dir: ./packages/marketing/dist 
           destination_dir: marketing 
