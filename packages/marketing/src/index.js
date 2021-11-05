@@ -1,2 +1,2 @@
 import('./bootstrap');
-console.log('yo there !!!');
+console.log('OhYea there !!!');
