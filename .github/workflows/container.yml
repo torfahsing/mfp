@@ -31,7 +31,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: mpf
           publish_dir: ./packages/container/dist 
-          # destination_dir: container 
+          destination_dir: container 
 
       # - uses: chrislennon/action-aws-cli@v1.1
       # - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
