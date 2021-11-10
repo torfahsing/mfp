@@ -25,6 +25,7 @@ jobs:
           echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
           echo 'ACTIONS_ALLOW_UNSECURE_COMMANDS=true' >> $GITHUB_ENV
           echo 'AWS_DEFAULT_REGION: us-east-2'
+          echo 'AWS_EC2_METADATA_DISABLED: true'
       # - uses: chrislennon/action-aws-cli@v1.1
       - uses: shinyinc/action-aws-cli@v1.2
       - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/marketing/latest
