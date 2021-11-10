@@ -21,8 +21,10 @@ jobs:
       - run: npm run build
       - name: ACTIONS_ALLOW_UNSECURE_COMMANDS
         run: echo 'ACTIONS_ALLOW_UNSECURE_COMMANDS=true' >> $GITHUB_ENV
-     - name: AWS_ACCESS
-        run: echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}"
-        run: echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
-      - uses: chrislennon/action-aws-cli@v1.1
-      - run: AWS s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/marketing/latest
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: mpf
+          publish_dir: ./packages/marketing/dist 
+          destination_dir: marketing 
