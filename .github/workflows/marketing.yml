@@ -27,4 +27,4 @@ jobs:
           echo 'AWS_DEFAULT_REGION: us-east-2'
       # - uses: chrislennon/action-aws-cli@v1.1
       - uses: shinyinc/action-aws-cli@v1.2
-      - run: AWS s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/marketing/latest
+      - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/marketing/latest
